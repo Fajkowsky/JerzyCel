@@ -30,7 +30,7 @@ gulp.task("html", function () {
 
 gulp.task("sass", function () {
     var config = {
-        includePaths: ['./bower_components/bulma/'],
+        includePaths: ['./bower_components/bulma/', './node_modules/font-awesome/scss'],
         outputStyle: 'compressed'
     };
 
