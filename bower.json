@@ -1,0 +1,17 @@
+{
+  "name": "jerzycel",
+  "authors": [
+    "Aneta Harnasz"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bulma": "^0.3.1"
+  }
+}
