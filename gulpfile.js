@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    nunjucksRender = require('gulp-nunjucks-render');
 
 var paths = {
     html: "src/*.html",
@@ -21,6 +22,7 @@ var names = {
 gulp.task("html", function () {
     return pump([
         gulp.src(paths.html),
+        nunjucksRender({ path: ['src/']}),
         htmlmin({collapseWhitespace: true}),
         gulp.dest(paths.dist)
     ]);
