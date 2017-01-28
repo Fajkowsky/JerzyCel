@@ -4,14 +4,21 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
+    cssnano = require('gulp-cssnano'),
     concat = require('gulp-concat'),
-    nunjucksRender = require('gulp-nunjucks-render');
+    nunjucksRender = require('gulp-nunjucks-render'),
+    env = require('gulp-env'),
+    ftp = require('vinyl-ftp'),
+    uncss = require('gulp-uncss');
+
+env({file: "env.json"});
 
 var paths = {
     html: "src/*.html",
     sass: "src/static/sass/*.scss",
     js: "src/static/js/*.js",
-    dist: "build"
+    dist: "build/",
+    ftp: "/public_html"
 };
 
 var names = {
@@ -22,7 +29,7 @@ var names = {
 gulp.task("html", function () {
     return pump([
         gulp.src(paths.html),
-        nunjucksRender({ path: ['src/']}),
+        nunjucksRender({path: ['src/']}),
         htmlmin({collapseWhitespace: true}),
         gulp.dest(paths.dist)
     ]);
@@ -30,14 +37,15 @@ gulp.task("html", function () {
 
 gulp.task("sass", function () {
     var config = {
-        includePaths: ['./bower_components/bulma/', './node_modules/font-awesome/scss'],
-        outputStyle: 'compressed'
+        includePaths: ['./bower_components/bulma/', './node_modules/font-awesome/scss']
     };
 
     return pump([
         gulp.src(paths.sass),
         sass(config),
         concat(names.css),
+        uncss({html: [paths.html]}),
+        cssnano(),
         gulp.dest(paths.dist)
     ]);
 });
@@ -61,4 +69,20 @@ gulp.task("watch", function () {
     gulp.watch(paths.js, ["js"]);
 });
 
-gulp.task("default", ["clean", "html", "sass", "js", "watch"]);
+
+gulp.task("deploy", ["build"], function () {
+    var conn = ftp.create({
+        host: process.env.host,
+        user: process.env.user,
+        password: process.env.password,
+        parallel: 10
+    });
+
+    return pump([
+        gulp.src([paths.dist + "/**/*.*"], {buffer: false}),
+        conn.dest(paths.ftp)
+    ])
+});
+
+gulp.task("build", ["html", "sass", "js"]);
+gulp.task("default", ["clean", "build", "watch"]);
