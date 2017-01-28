@@ -15,7 +15,7 @@ var gulp = require('gulp'),
 env({file: "env.json"});
 
 var paths = {
-    html: "src/*.html",
+    html: "src/pages/*.html",
     sass: "src/static/sass/*.scss",
     js: "src/static/js/*.js",
     img: "src/static/img/*",
@@ -31,7 +31,7 @@ var names = {
 gulp.task("html", function () {
     return pump([
         gulp.src(paths.html),
-        nunjucksRender({path: ['src/']}),
+        nunjucksRender({path: ['src/templates/']}),
         htmlmin({collapseWhitespace: true}),
         gulp.dest(paths.dist)
     ]);
