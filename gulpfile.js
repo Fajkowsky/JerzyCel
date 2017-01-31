@@ -46,7 +46,7 @@ gulp.task("sass", function () {
         gulp.src(paths.sass),
         sass(config),
         concat(names.css),
-        uncss({html: [paths.html]}),
+        uncss({html: ['src/**/*.html']}),
         cssnano(),
         gulp.dest(paths.dist)
     ]);
@@ -55,7 +55,7 @@ gulp.task("sass", function () {
 gulp.task("js", function () {
     return pump([
         gulp.src(paths.js),
-        uglify(),
+        uglify({compress: {unused: false}}),
         concat(names.js),
         gulp.dest(paths.dist)
     ]);
