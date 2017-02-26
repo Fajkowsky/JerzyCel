@@ -8,11 +8,8 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     concat = require('gulp-concat'),
     nunjucksRender = require('gulp-nunjucks-render'),
-    env = require('gulp-env'),
     ftp = require('vinyl-ftp'),
     uncss = require('gulp-uncss');
-
-env({file: "env.json"});
 
 var paths = {
     html: "src/pages/*.html",
@@ -82,16 +79,6 @@ gulp.task("watch", function () {
 
 
 gulp.task("deploy", ["build"], function () {
-    var conn = ftp.create({
-        host: process.env.host,
-        user: process.env.user,
-        password: process.env.password
-    });
-
-    return pump([
-        gulp.src([paths.dist + "/**/*.*"], {buffer: false}),
-        conn.dest(paths.ftp)
-    ])
 });
 
 gulp.task("build", ["html", "sass", "js", "img"]);
