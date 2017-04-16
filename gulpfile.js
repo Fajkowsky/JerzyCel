@@ -8,7 +8,6 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     concat = require('gulp-concat'),
     nunjucksRender = require('gulp-nunjucks-render'),
-    ftp = require('vinyl-ftp'),
     uncss = require('gulp-uncss');
 
 var paths = {
@@ -16,8 +15,7 @@ var paths = {
     sass: "src/static/sass/*.scss",
     js: "src/static/js/*.js",
     img: "src/static/img/*",
-    dist: "build/",
-    ftp: "/public_html"
+    dist: "build/"
 };
 
 var names = {
