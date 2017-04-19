@@ -1,0 +1,43 @@
+@import "./variables";
+
+.footer {
+  background-color: $primary;
+  color: $primary-invert;
+  padding: 3rem 1.5rem;
+
+  .container {
+    @include desktop {
+      padding: 0 3rem;
+    }
+
+    @include widescreen {
+      padding: 0 6rem;
+    }
+  }
+}
+
+.is-brand {
+  color: $yellow;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.is-contact {
+  font-size: 23px;
+  margin-top: 1rem;
+}
+
+.footer-menu {
+  font-size: 21px;
+  font-weight: 600;
+  margin-top: calc(1rem + 54px);
+
+  a {
+    color: $primary-invert;
+
+    &:hover,
+    &.is-active {
+      color: $primary-light;
+    }
+  }
+}
