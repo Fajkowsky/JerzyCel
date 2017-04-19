@@ -1,2 +1,10 @@
 @import "font-awesome";
+
+@import "./variables";
 @import "bulma";
+
+body {
+  font-family: 'Raleway';
+}
+
+@import "./nav";

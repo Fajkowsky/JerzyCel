@@ -1,0 +1,31 @@
+<header class="nav">
+  <div class="container">
+    <div class="nav-left">
+      <a href="/" class="nav-item is-brand">Solidne Pomiary</a>
+    </div>
+
+    <span class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+
+    <div class="nav-right nav-menu">
+      <a href="/" class="nav-item">
+        <span>Strona główna</span>
+      </a>
+      <a href="/" class="nav-item {{ 'is-active' if pageActive == 'oferta' }}">
+        <span>Oferta</span>
+      </a>
+      <a href="/" class="nav-item {{ 'is-active' if pageActive == 'o-firmie' }}">
+        <span>O firmie</span>
+      </a>
+      <a href="/" class="nav-item {{ 'is-active' if pageActive == 'poradnik-pomiarow' }}">
+        <span>Poradnik pomiarów</span>
+      </a>
+      <a href="/" class="nav-item {{ 'is-active' if pageActive == 'kontakt' }}">
+        <span>Kontakt</span>
+      </a>
+    </div>
+  </div>
+</header>

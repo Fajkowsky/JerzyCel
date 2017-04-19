@@ -1,0 +1,29 @@
+@import "../../../bower_components/bulma/sass/utilities/all";
+
+$primary: #009688;
+$primary-invert: findColorInvert($primary);
+$primary-light: #B2DFDB;
+$primary-lighter: #E0F2F1;
+$yellow: #FFC107;
+$yellow-light: #FFECB3;
+$yellow-lighter: #FFF8E1;
+$darker: #37474F;
+$dark: #607D8B;
+$dark-light: #CFD8DC;
+$dark-lighter: #ECEFF1;
+
+$colors: (
+  white: ($white, $black),
+  black: ($black, $white),
+  light: ($light, $light-invert),
+  dark: ($dark, $dark-invert),
+  primary: ($primary, $primary-invert),
+  info: ($info, $info-invert),
+  success: ($success, $success-invert),
+  warning: ($warning, $warning-invert),
+  danger: ($danger, $danger-invert),
+);
+
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
