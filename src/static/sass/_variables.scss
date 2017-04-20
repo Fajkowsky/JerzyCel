@@ -9,8 +9,8 @@ $yellow-light: #FFECB3;
 $yellow-lighter: #FFF8E1;
 $darker: #37474F;
 $dark: #607D8B;
-$dark-light: #CFD8DC;
-$dark-lighter: #ECEFF1;
+$light: #CFD8DC;
+$lighter: #ECEFF1;
 
 $colors: (
   white: ($white, $black),
@@ -27,3 +27,12 @@ $colors: (
 $link: $primary;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
+
+@mixin narrow-container {
+  @include desktop {
+      padding: 0 3rem;
+    }
+  @include widescreen {
+    padding: 0 6rem;
+  }
+}

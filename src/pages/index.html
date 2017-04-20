@@ -1,34 +1,77 @@
 {% extends "base.html" %}
 
+{% set pageActive = 'poradnik-pomiarow' %}
+
 {% block content %}
-<section class="hero is-fullheight">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title">
-                Pomiary elektryczne. Jerzy Cel
-            </h1>
-            <p class="subtitle">
-                Oferujemy Państwu pomiary elektryczne w domach jednorodzinnych, zakładach produkcyjnych oraz pomiary
-                elektronarzędzi.
-                Mamy 30-letnie doświadczenie z instalacjami eletrycznymi i wierzymy, że solidne i regularne pomiary
-                zapewnią Państwu bezpieczeństwo.
-            </p>
-
-            <p>Wykonujemy:</p>
-            <dl>
-                <li>pomiary elektryczne</li>
-                <li>przeglądy i prace kontrolno pomiarowe</li>
-                <li>pomiary skuteczności ochrony przeciwporażeniowej</li>
-                <li>pomiary rezystancji izolacji obwodów</li>
-                <li>pomiary elektronarzędzi</li>
-                <li>pomiary instalacji odgromowych</li>
-                <li>pomiary uziemień rusztowań</li>
-                <li>podłączania sprzętów domowych</li>
-            </dl>
-
-            <p>Pomiary wykonujemy na terenie całego <strong>Śląska</strong> i nie tylko, dojeżdzamy do <b>Skoczowa, Wisły, Cieszyna, Bielska, Żywca i Ustronia.</b></p>
-            <h4 class="title is-4">Zapraszamy do kontaktu. Telefon kontaktowy: <a href="tel:602217539">602 217 539</a></h4>
-        </div>
+<section class="hero is-medium">
+  <div class="hero-body has-text-centered">
+    <div class="container">
+      Specjalizujemy się w wykonywaniu profesjonalnych pomiarów elektrycznych wraz z wymaganymi protokołami na terenie południowej Polski.
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="content">
+      <ul><b>Oferujemy następujące usługi:</b>
+        <li>pomiary elektryczne</li>
+        <li>przeglądy i prace kontrolno pomiarowe</li>
+        <li>pomiary skuteczności ochrony przeciwpożarowej</li>
+        <li>pomiary rezystancji izolacji przewodów</li>
+        <li>pomiary elektronarzędzi</li>
+        <li>pomiary instalacji odgromowych</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-primary steps">
+  <div class="hero-body has-text-centered">
+    <div class="container">
+      <div class="columns">
+        <div class="column step">
+          <div class="name">Wycena</div>
+          <small class="description">Telefonicznie<br />lub na miejscu</small>
+        </div>
+        <div class="column step">
+          <div class="name">Pomiary</div>
+          <small class="description">6 godzin dom jednorodzinny<br />30 minut elektronarzędzie</small>
+        </div>
+        <div class="column step">
+          <div class="name">Protokół</div>
+          <small class="description">opracowanie<br />1 - 10 dni</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section showcase">
+  <div class="container">
+    <div class="content">
+      <h1 class="title is-4">Nasze pomiary wykonujemy na urządzeniach renomowanej marki Sonel wraz z ważnymi certyfikatami oraz uprawnieniami.</h1>
+      <div class="columns">
+        <div class="column">
+          <figure class="image">
+            <img src="https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97400&w=600&h=400" alt="">
+          </figure>
+        </div>
+        <div class="column">
+          <p>CPM-1006 - Cyfrowy miernik cęgowy - umożliwia swobodne pomiary przewodów nawet do 34mm grubości. Jest wykorzystywany do sprawdzania prądu stałego, przemiennego, rozruchowego, temperatury czy też częstotliwości.</p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <figure class="image">
+            <img src="https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97400&w=600&h=400" alt="">
+          </figure>
+        </div>
+        <div class="column">
+          <p>PAT-805 - Miernik bezpieczeństwa sprzętu elektrycznego - umożliwia pomiary parametrów decydujących o bezpieczeństwie między innymi takich jak rezystancji przewodów ochronnych czy ciągłości przewodów.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 {% endblock %}

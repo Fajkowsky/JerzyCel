@@ -5,7 +5,21 @@
 
 body {
   font-family: 'Raleway';
+  font-size: 20px;
+}
+
+.hero {
+  background-color: $lighter;
+  color: $primary;
+  font-size: 28px;
+}
+
+.section {
+  .container {
+    @include narrow-container;
+  }
 }
 
 @import "./nav";
+@import "./content";
 @import "./footer";

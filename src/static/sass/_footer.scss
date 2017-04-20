@@ -6,13 +6,7 @@
   padding: 3rem 1.5rem;
 
   .container {
-    @include desktop {
-      padding: 0 3rem;
-    }
-
-    @include widescreen {
-      padding: 0 6rem;
-    }
+    @include narrow-container;
   }
 }
 
