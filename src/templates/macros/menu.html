@@ -1,0 +1,11 @@
+{% macro nav_item(name, slug, active=false) %}
+<a href="/{{ slug }}" class="nav-item {{ 'is-active' if active }}">
+  <span>{{ name }}</span>
+</a>
+{% endmacro %}
+
+{% macro footer(name, slug, active=false) %}
+<li>
+  <a href="/{{ slug }}" class="{{ 'is-active' if active }}">{{ name }}</a>
+</li>
+{% endmacro %}

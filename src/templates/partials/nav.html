@@ -11,21 +11,21 @@
     </span>
 
     <div class="nav-right nav-menu">
-      <a href="/" class="nav-item">
-        <span>Strona główna</span>
-      </a>
-      <a href="/" class="nav-item {{ 'is-active' if pageActive == 'oferta' }}">
-        <span>Oferta</span>
-      </a>
-      <a href="/" class="nav-item {{ 'is-active' if pageActive == 'o-firmie' }}">
-        <span>O firmie</span>
-      </a>
-      <a href="/" class="nav-item {{ 'is-active' if pageActive == 'poradnik-pomiarow' }}">
-        <span>Poradnik pomiarów</span>
-      </a>
-      <a href="/" class="nav-item {{ 'is-active' if pageActive == 'kontakt' }}">
-        <span>Kontakt</span>
-      </a>
+
+      {% import "macros/menu.html" as menu %}
+
+      {% set nav_items = [
+        { name: 'Strona główna', slug: none },
+        { name: 'Oferta', slug: 'oferta' },
+        { name: 'O firmie', slug: 'o-firmie' },
+        { name: 'Poradnik pomiarów', slug: 'poradnik-pomiarow' },
+        { name: 'Kontakt', slug: 'kontakt' }
+      ] %}
+
+      {% for item in nav_items %}
+        {{ menu.nav_item(item.name, item.slug, pageActive == slug) }}
+      {% endfor %}
+
     </div>
   </div>
 </header>

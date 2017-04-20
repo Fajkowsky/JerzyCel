@@ -12,6 +12,7 @@
     autoplay: 5000,
     loop: true,
     pagination: '.swiper-pagination',
+    paginationClickable: true,
     spaceBetween: 30
   })
 })();

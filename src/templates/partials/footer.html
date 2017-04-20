@@ -17,11 +17,21 @@
       <div class="column is-5 is-offset-1">
         <div class="footer-menu">
           <ul>
-            <li><a href="/">Strona główna</a></li>
-            <li><a href="/" class="{{ 'is-active' if pageActive == 'oferta' }}">Oferta</a></li>
-            <li><a href="/" class="{{ 'is-active' if pageActive == 'o-firmie' }}">O firmie</a></li>
-            <li><a href="/" class="{{ 'is-active' if pageActive == 'poradnik-pomiarow' }}">Poradnik pomiarów</a></li>
-            <li><a href="/" class="{{ 'is-active' if pageActive == 'kontakt' }}">Kontakt</a></li>
+
+            {% import "macros/menu.html" as menu %}
+
+            {% set nav_items = [
+              { name: 'Strona główna', slug: none },
+              { name: 'Oferta', slug: 'oferta' },
+              { name: 'O firmie', slug: 'o-firmie' },
+              { name: 'Poradnik pomiarów', slug: 'poradnik-pomiarow' },
+              { name: 'Kontakt', slug: 'kontakt' }
+            ] %}
+
+            {% for item in nav_items %}
+              {{ menu.footer(item.name, item.slug, pageActive == slug) }}
+            {% endfor %}
+      
           </ul>
         </div>
       </div>

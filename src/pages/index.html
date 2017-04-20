@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% set pageActive = 'poradnik-pomiarow' %}
+{% set pageActive='oferta' %}
 
 {% block content %}
 <section class="hero is-medium">
@@ -30,18 +30,19 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <div class="columns">
-        <div class="column step">
-          <div class="name">Wycena</div>
-          <small class="description">Telefonicznie<br />lub na miejscu</small>
-        </div>
-        <div class="column step">
-          <div class="name">Pomiary</div>
-          <small class="description">6 godzin dom jednorodzinny<br />30 minut elektronarzędzie</small>
-        </div>
-        <div class="column step">
-          <div class="name">Protokół</div>
-          <small class="description">opracowanie<br />1 - 10 dni</small>
-        </div>
+        
+        {% import "macros/steps.html" as steps %}
+
+        {% set steps_items = [
+          { name: 'Wycena', description: 'Telefonicznie<br />lub na miejscu' },
+          { name: 'Pomiary', description: '6 godzin dom jednorodzinny<br />30 minut eletronarzędzie' },
+          { name: 'Protokół', description: 'opracowanie<br />1 - 10 dni' }
+        ] %}
+
+        {% for step in steps_items %}
+          {{ steps.step(step.name, step.description) }}
+        {% endfor %}
+
       </div>
     </div>
   </div>
@@ -51,26 +52,32 @@
   <div class="container">
     <div class="content">
       <h1 class="title is-4">Nasze pomiary wykonujemy na urządzeniach renomowanej marki Sonel wraz z ważnymi certyfikatami oraz uprawnieniami.</h1>
-      <div class="columns">
-        <div class="column">
-          <figure class="image">
-            <img src="https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97400&w=600&h=400" alt="">
-          </figure>
-        </div>
-        <div class="column">
-          <p>CPM-1006 - Cyfrowy miernik cęgowy - umożliwia swobodne pomiary przewodów nawet do 34mm grubości. Jest wykorzystywany do sprawdzania prądu stałego, przemiennego, rozruchowego, temperatury czy też częstotliwości.</p>
-        </div>
-      </div>
-      <div class="columns">
-        <div class="column">
-          <figure class="image">
-            <img src="https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97400&w=600&h=400" alt="">
-          </figure>
-        </div>
-        <div class="column">
-          <p>PAT-805 - Miernik bezpieczeństwa sprzętu elektrycznego - umożliwia pomiary parametrów decydujących o bezpieczeństwie między innymi takich jak rezystancji przewodów ochronnych czy ciągłości przewodów.</p>
-        </div>
-      </div>
+      
+      {% import "macros/showcase.html" as showcase %}
+
+      {% set showcase_items = [
+        {
+          img: 'https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97400&w=600&h=400',
+          description: 'CPM-1006 - Cyfrowy miernik cęgowy - umożliwia swobodne pomiary przewodów nawet do 34mm grubości. Jest wykorzystywany do sprawdzania prądu stałego, przemiennego'
+        },
+        {
+          img: 'https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97400&w=600&h=400',
+          description: 'PAT-805 - Miernik bezpieczeństwa sprzętu elektrycznego - umożliwia pomiary parametrów decydujących o bezpieczeństwie między innymi takich jak rezystancji przewodów ochronnych czy ciągłości przewodów.'
+        },
+        {
+          img: 'https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97400&w=600&h=400',
+          description: 'MPI-525 - Wielofunkcyjny miernik parametrów instalacji elektrycznej - jest to jedyny miernik na rynku który oferuje pomiary izolacji aż do 2500 V.Pozwala również wykonywać pomiary impedancja pętli zwarcia, rezystancji i ciągłości izolacji.'
+        },
+        {
+          img: 'https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97400&w=600&h=400',
+          description: 'MIE-500 - Miernik instalacji elektrycznych - urządzenie do wykonywania pomiarów instalacji zabezpieczonych wyłącznikami nadprądowymi oraz różnicowoprądowymi.'
+        }
+      ] %}
+
+      {% for item in showcase_items %}
+        {{ showcase.item(item.img, item.description) }}
+      {% endfor %}
+
     </div>
   </div>
 </section>
@@ -84,32 +91,26 @@
         <div class="swiper-container">
           <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-              <blockquote>
-                <q>Jestem zadowolony z wykonanych pomiarów przez tę firmę. Z całą pewnością zamierzam polecić ich usługi znajomym ze względu na profesjonalizm oraz czas realizacji.</q>
-                <footer>
-                  <span>Jan Kowalski</span>
-                </footer>
-              </blockquote>
-            </div>
+          {% import "macros/slides.html" as slides %}
 
-            <div class="swiper-slide">
-              <blockquote>
-                <q>Jestem zadowolony z wykonanych pomiarów przez tę firmę. Z całą pewnością zamierzam polecić ich usługi znajomym ze względu na profesjonalizm oraz czas realizacji.</q>
-                <footer>
-                  <span>Jan Kowalski</span>
-                </footer>
-              </blockquote>
-            </div>
+          {% set quotes = [
+            {
+              quote: 'Jestem zadowolony z wykonanych pomiarów przez tę firmę. Z całą pewnością zamierzam polecić ich usługi znajomym ze względu na profesjonalizm oraz czas realizacji.',
+              author: 'Jan Kowalski'
+            },
+            {
+              quote: 'Jestem zadowolony z wykonanych pomiarów przez tę firmę. Z całą pewnością zamierzam polecić ich usługi znajomym ze względu na profesjonalizm oraz czas realizacji.',
+              author: 'Jan Kowalski'
+            },
+            {
+              quote: 'Jestem zadowolony z wykonanych pomiarów przez tę firmę. Z całą pewnością zamierzam polecić ich usługi znajomym ze względu na profesjonalizm oraz czas realizacji.',
+              author: 'Jan Kowalski'
+            }
+          ] %}
 
-            <div class="swiper-slide">
-              <blockquote>
-                <q>Jestem zadowolony z wykonanych pomiarów przez tę firmę. Z całą pewnością zamierzam polecić ich usługi znajomym ze względu na profesjonalizm oraz czas realizacji.</q>
-                <footer>
-                  <span>Jan Kowalski</span>
-                </footer>
-              </blockquote>
-            </div>
+          {% for quote in quotes %}
+            {{ slides.slide(quote.quote, quote.author) }}
+          {% endfor %}
 
           </div>
           <div class="swiper-pagination"></div>

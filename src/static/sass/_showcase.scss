@@ -1,0 +1,63 @@
+@import "./variables";
+
+.showcase {
+  .columns {
+    align-items: center;
+    font-family: 'News Cycle';
+    font-size: 20px;
+
+    @include tablet {
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+
+        .column {
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+  .image {
+    @include desktop {
+      padding: 2rem;
+    }
+  }
+}
+
+.step {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include mobile {
+    flex-direction: row;
+  }
+
+  .name {
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid $white;
+    display: flex;
+    font-size: 30px;
+    height: 180px;
+    justify-content: center;
+    width: 180px;
+
+    &:hover {
+      background-color: $white;
+      color: $primary;
+      cursor: pointer;
+    }
+  }
+
+  .description {
+    flex: 1;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
