@@ -7,4 +7,11 @@
     navMenu.classList.toggle('is-active');
     navToggle.classList.toggle('is-active');
   });
+
+  const mySwiper = new Swiper('.swiper-container', {
+    autoplay: 5000,
+    loop: true,
+    pagination: '.swiper-pagination',
+    spaceBetween: 30
+  })
 })();
