@@ -8,7 +8,6 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     concat = require('gulp-concat'),
     nunjucksRender = require('gulp-nunjucks-render'),
-    ftp = require('vinyl-ftp'),
     uncss = require('gulp-uncss');
 
 var paths = {
@@ -75,10 +74,6 @@ gulp.task("watch", function () {
     gulp.watch(paths.sass, ["sass"]);
     gulp.watch(paths.js, ["js"]);
     gulp.watch(paths.img, ["img"]);
-});
-
-
-gulp.task("deploy", ["build"], function () {
 });
 
 gulp.task("build", ["html", "sass", "js", "img"]);
