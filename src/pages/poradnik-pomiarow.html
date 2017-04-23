@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% set pageActive='poradnik-pomiarow' %}
+
+{% block content %}
+
+  {% set sections = [
+    {
+      items: [
+        {
+          title: "Poradnik - kto, jak często i jakie pomiary musisz wykonywać?",
+          body: "Chcielibyśmy przybliżyć Państwu przepisy o pomiarach elektrycznych oraz napisać dlaczego warto je wykonywać dla dobra siebie, pracowników oraz rodziny!"
+        }
+      ]
+    },
+    {
+      header: "Domy jednorodzinne",
+      items: [
+        {
+          title: "Jakie pomiary?",
+          body: "W domach jednorodzinych podstawą są pomiary odgromówki, która chroni nas przes wyładowaniami atmosferycznymim. Ważne jest aby sprawdzić stan tej instalacji zwłaszcza przed okresem burzowym - wiosną."
+        },
+        {
+          title: "Po co?",
+          body: "Najważniejszym powodem dla wykonania takich pomiarów powinno Państwa poczucie bezpieczeństwa. Drugim bardzo ważnych powodem jest wymóg aktualnych pomiarów przez zakłady ubezpieczeń oraz banki, w przypadku domu i mieszkania na kredyt."
+        }
+      ]
+    },
+    {
+      header: "Elektro narzędzia",
+      items: [
+        {
+          title: "Jakie pomiary?",
+          body: "W domach jednorodzinych podstawą są pomiary odgromówki, która chroni nas przes wyładowaniami atmosferycznymim. Ważne jest aby spradzić stan tej instalacji zwłaszcza przed okresem burzowym - wiosną."
+        },
+        {
+          title: "Po co?",
+          body: "Najważniejszym powodem dla wykonania takich pomiarów powinno Państwa poczucie bezpieczeństwa. Drugim bardzo ważnych powodem jest wymóg aktualnych pomiarów przez zakłady ubezpieczeń oraz banki, w przypadku domu i mieszkania na kredyt."
+        }
+      ]
+    },
+    {
+      header: "Zakłady pracy",
+      items: [
+        {
+          title: "Jakie pomiary?",
+          body: "W domach jednorodzinych podstawą są pomiary odgromówki, która chroni nas przes wyładowaniami atmosferycznymim. Ważne jest aby spradzić stan tej instalacji zwłaszcza przed okresem burzowym - wiosną."
+        },
+        {
+          title: "Po co?",
+          body: "Najważniejszym powodem dla wykonania takich pomiarów powinno Państwa poczucie bezpieczeństwa. Drugim bardzo ważnych powodem jest wymóg aktualnych pomiarów przez zakłady ubezpieczeń oraz banki, w przypadku domu i mieszkania na kredyt."
+        }
+      ]
+    }
+  ] %}
+
+  {% for section in sections %}
+  <section class="section questions">
+    {% if section.header %}
+    <header class="section-header">
+      <h1 class="title">{{ section.header }}</h1>
+    </header>
+    {% endif %}
+    <div class="container">
+      <div class="content">
+      {% for item in section.items %}
+      <h2 class="title is-5"><b>{{ item.title }}</b></h2>
+      <p>{{ item.body }}</p>
+      {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+
+{% endblock %}

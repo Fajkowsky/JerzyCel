@@ -29,7 +29,7 @@
             ] %}
 
             {% for item in nav_items %}
-              {{ menu.footer(item.name, item.slug, pageActive == slug) }}
+              {{ menu.footer(item.name, item.slug, pageActive == item.slug) }}
             {% endfor %}
       
           </ul>

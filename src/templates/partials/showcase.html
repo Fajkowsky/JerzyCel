@@ -1,0 +1,33 @@
+<section class="section showcase">
+  <div class="container">
+    <div class="content">
+      <h1 class="title is-4">Nasze pomiary wykonujemy na urządzeniach renomowanej marki Sonel wraz z ważnymi certyfikatami oraz uprawnieniami.</h1>
+      
+      {% import "macros/showcase.html" as showcase %}
+
+      {% set showcase_items = [
+        {
+          img: 'https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97400&w=600&h=400',
+          description: 'CPM-1006 - Cyfrowy miernik cęgowy - umożliwia swobodne pomiary przewodów nawet do 34mm grubości. Jest wykorzystywany do sprawdzania prądu stałego, przemiennego'
+        },
+        {
+          img: 'https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97400&w=600&h=400',
+          description: 'PAT-805 - Miernik bezpieczeństwa sprzętu elektrycznego - umożliwia pomiary parametrów decydujących o bezpieczeństwie między innymi takich jak rezystancji przewodów ochronnych czy ciągłości przewodów.'
+        },
+        {
+          img: 'https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97400&w=600&h=400',
+          description: 'MPI-525 - Wielofunkcyjny miernik parametrów instalacji elektrycznej - jest to jedyny miernik na rynku który oferuje pomiary izolacji aż do 2500 V.Pozwala również wykonywać pomiary impedancja pętli zwarcia, rezystancji i ciągłości izolacji.'
+        },
+        {
+          img: 'https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97400&w=600&h=400',
+          description: 'MIE-500 - Miernik instalacji elektrycznych - urządzenie do wykonywania pomiarów instalacji zabezpieczonych wyłącznikami nadprądowymi oraz różnicowoprądowymi.'
+        }
+      ] %}
+
+      {% for item in showcase_items %}
+        {{ showcase.item(item.img, item.description) }}
+      {% endfor %}
+
+    </div>
+  </div>
+</section>

@@ -23,7 +23,7 @@
       ] %}
 
       {% for item in nav_items %}
-        {{ menu.nav_item(item.name, item.slug, pageActive == slug) }}
+        {{ menu.nav_item(item.name, item.slug, pageActive == item.slug) }}
       {% endfor %}
 
     </div>

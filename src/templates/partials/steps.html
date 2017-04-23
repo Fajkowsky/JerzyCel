@@ -1,0 +1,21 @@
+<section class="hero is-primary steps">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="columns">
+        
+        {% import "macros/steps.html" as steps %}
+
+        {% set steps_items = [
+          { name: 'Wycena', description: 'Telefonicznie<br />lub na miejscu' },
+          { name: 'Pomiary', description: '6 godzin dom jednorodzinny<br />30 minut eletronarzędzie' },
+          { name: 'Protokół', description: 'opracowanie<br />1 - 10 dni' }
+        ] %}
+
+        {% for step in steps_items %}
+          {{ steps.step(step.name, step.description) }}
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+</section>
