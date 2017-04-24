@@ -14,8 +14,7 @@ var paths = {
   sass: "src/static/sass/*.scss",
   js: "src/static/js/*.js",
   img: "src/static/img/*",
-  dist: "build/",
-  ftp: "/public_html"
+  dist: "build/"
 };
 
 var names = {
@@ -63,6 +62,13 @@ gulp.task("img", function () {
   ]);
 });
 
+gulp.task("icons", function() {
+  return pump([
+    gulp.src("./node_modules/font-awesome/fonts/**.*"),
+    gulp.dest(paths.dist + "/fonts")
+  ])
+});
+
 gulp.task("clean", function () {
   return del([paths.dist]);
 });
@@ -74,5 +80,5 @@ gulp.task("watch", function () {
   gulp.watch(paths.img, ["img"]);
 });
 
-gulp.task("build", ["html", "sass", "js", "img"]);
+gulp.task("build", ["html", "sass", "js", "img", "icons"]);
 gulp.task("default", ["clean", "build", "watch"]);
