@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% set pageActive='oferta' %}
+
+{% block content %}
+<section class="hero is-medium">
+  <div class="hero-body has-text-centered">
+    <div class="container">
+      Specjalizujemy się w wykonywaniu profesjonalnych pomiarów elektrycznych wraz z wymaganymi protokołami na terenie południowej Polski.
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="content">
+
+      {% set offers = [
+        {
+          title: 'Pomiary elektryczne',
+          slug: 'pomiary-elektryczne',
+          description: 'Dzięki pomiarom elektrycznym możemy ocenić aktualny stan instalacji elektrycznych oraz urządzeń elektrycznych co ma bardzo duży wpływ na bezpieczeństwo oraz ich bezawaryjną pracę.'
+        },
+        {
+          title: 'Pomiary elektronarzędzi',
+          slug: 'pomiary-elektronarzedzi',
+          description: 'Wykonujemy okresowe obowiązkowe pomiary sprzętu elektrycznego oraz elektronarzędzi. Przykładami takich narzędzi są wszelkiego rodzaju spawarki, wiertarki, szlifierki, agregatory, przedłużacze, przewody oraz inne narzędzia elektryczne. Pomiary takie mają wykryć wszelkiego rodzaju nieprawidłowości w działaniu takich narzędzi oraz zweryfikować ich sprawność elektryczną.'
+        },
+        {
+          title: 'Pomiary instalacji odgromowych',
+          slug: 'pomiary-instalacji-odgromowych',
+          description: 'Instalacje odgromowe to nic innego jak ochrona przeciw wyładowaniom atmosferycznym. Zajmujemy się pomiarami instalacji zewnętrznymi oraz wewnętrznymi wraz ze wszelkimi instalacjami przeciwprzepięciowymi.'
+        },
+        {
+          title: 'Pomiary rezystancji izolacji obwodów',
+          slug: 'pomiary-rezystancji-izolacji-obwodow',
+          description: 'Izolacja jest jedną z najbardziej podstawowych środków ochrony przed porażeniem prądowym przez co ważne jest wykonywanie również pomiarów sprawdzających jej stan. Prawidłowy stan izolacji ma również wpływ na prawidłowe działanie urządzeń elektrycznych.'
+        },
+        {
+          title: 'Pomiary skuteczności ochrony przeciwporażeniowej',
+          slug: 'pomiary-skutecznosci-ochrony-przeciwporazeniowej',
+          description: 'Pomiary te mają zweryfikować działanie bezpieczników i wyłączników podczas gdy wystąpi nieciągłości w instalacji elektrycznej co może prowadzić do porażenia.'
+        },
+        {
+          title: 'Przeglądy i prace kontrolno pomiarowe',
+          slug: 'przeglady-i-prace-kontrolno-pomiarowe',
+          description: 'Wykonujemy pomiary okresowe, tak zwane pomiary pięcioletnie na przykład dla wspólnot mieszkaniowych w budynkach mieszkalnych oraz pomiary eksploatacyjne na przykład elektronarzędzi. Zajmujemy się również pomiarami odbiorczymi dla różnego rodzaju obiektów budowlanych.'
+        }
+      ] %}
+
+      {% for offer in offers %}
+
+        <section class="offer">
+          <h2 class="title is-5"><a name="{{ offer.slug }}">{{ offer.title }}</a></h2>
+          <p class="description">{{ offer.description }}</p>
+        </section>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+{% include "partials/steps.html" %}
+
+<section class="section">
+  <div class="container has-text-centered">
+    <div class="content examples">
+      <p>Pooglądaj przykłady protokołów:</p>
+
+      {% set examples = [
+        {
+          url: '',
+          name: 'dom jednorodzinny'
+        },
+        {
+          url: '',
+          name: 'linia produkcyjna'
+        },
+        {
+          url: '',
+          name: 'elektronarzędzie'
+        }
+      ] %}
+
+      <div class="columns links">
+      {% for example in examples %}
+        <div class="column">
+          <a href="{{ example.url }}">
+            <span class="icon is-large">
+              <i class="fa fa-file-pdf-o"></i>
+            </span>
+          </a>
+          <span class="name">{{ example.name }}</span>
+        </div>
+      {% endfor %}
+      </div>
+
+      <p>W przypadku wykrycia <b>usterek</b> w instalacji, pomiary wykonywane są ponownie po usunięciu usterek <b>w ramach ceny usługi!</b></p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

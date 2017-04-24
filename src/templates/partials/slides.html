@@ -1,0 +1,37 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="content">
+        <h2 class="title is-4">Rekomendacje</h2>
+
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+
+          {% import "macros/slides.html" as slides %}
+
+          {% set quotes = [
+            {
+              quote: 'Jestem zadowolony z wykonanych pomiarów przez tę firmę. Z całą pewnością zamierzam polecić ich usługi znajomym ze względu na profesjonalizm oraz czas realizacji.',
+              author: 'Jan Kowalski'
+            },
+            {
+              quote: 'Jestem zadowolony z wykonanych pomiarów przez tę firmę. Z całą pewnością zamierzam polecić ich usługi znajomym ze względu na profesjonalizm oraz czas realizacji.',
+              author: 'Jan Kowalski'
+            },
+            {
+              quote: 'Jestem zadowolony z wykonanych pomiarów przez tę firmę. Z całą pewnością zamierzam polecić ich usługi znajomym ze względu na profesjonalizm oraz czas realizacji.',
+              author: 'Jan Kowalski'
+            }
+          ] %}
+
+          {% for quote in quotes %}
+            {{ slides.slide(quote.quote, quote.author) }}
+          {% endfor %}
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

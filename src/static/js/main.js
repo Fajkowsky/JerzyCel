@@ -14,5 +14,5 @@
     pagination: '.swiper-pagination',
     paginationClickable: true,
     spaceBetween: 30
-  })
+  });
 })();

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% set pageActive='kontakt' %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container contact">
+      <div class="columns">
+        <div class="column">
+          <span class="title is-4"><b>Jerzy Cel</b></span>
+          <p>
+            602 217 539<br>
+            kontak@solidne.pomiary.pl
+          </p>
+          <p>
+            Regon: 868 876 876<br>
+            NIP: 6546 65465 654
+          </p>
+
+          <div class="map">
+            <iframe width="100%" height="100%" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJX7FmbGAwEUcREerLBp-ovJs&key=API_KEY" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="column">
+          <form action="" class="form">
+
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">Tytuł</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input name="title" type="text" class="input">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">Email</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input name="email" type="email" class="input">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">Wiadomość</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <textarea name="message"rows="5" class="textarea"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

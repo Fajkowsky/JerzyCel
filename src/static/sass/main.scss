@@ -20,8 +20,14 @@ body {
   }
 }
 
+hr.separator {
+  background-color: $yellow;
+  height: 5px;
+}
+
 @import "./nav";
 @import "./content";
+@import "./examples";
 @import "./showcase";
 @import "./swiper";
 @import "./footer";

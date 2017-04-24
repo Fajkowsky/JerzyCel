@@ -28,11 +28,22 @@ $link: $primary;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
 
+$font-secondary: 'News Cycle';
+
 @mixin narrow-container {
   @include desktop {
-      padding: 0 3rem;
-    }
-  @include widescreen {
-    padding: 0 6rem;
+    padding: 0 3rem;
   }
+  @include widescreen {
+    padding: 0 14rem;
+  }
+}
+
+@mixin list-item-dot {
+  background-color: $primary-light;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  margin: .6rem 1rem 0;
+  padding: 6px;
 }

@@ -3,7 +3,7 @@
 .showcase {
   .columns {
     align-items: center;
-    font-family: 'News Cycle';
+    font-family: $font-secondary;
     font-size: 20px;
 
     @include tablet {

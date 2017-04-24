@@ -1,0 +1,25 @@
+@import "./variables";
+
+.examples {
+  font-size: 23px;
+}
+
+.links {
+  display: flex;
+  font-size: 16px;
+  font-weight: 300;
+
+  a {
+    display: block;
+    margin: 0 auto .5rem;
+  }
+
+  .icon {
+    background-color: $red;
+    border-radius: 50%;
+    color: $white;
+    height: 4.5rem;
+    padding: 15px 20px;
+    width: 4.5rem;
+  }
+}
