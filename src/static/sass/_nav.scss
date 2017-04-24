@@ -41,13 +41,13 @@ header.nav {
 
         &.is-active {
           span {
-            border-color: $yellow;
+            border-color: $primary;
           }
         }
 
         &:hover {
           span {
-            border-color: $primary;      
+            border-color: $yellow;      
           }
         }
       }
