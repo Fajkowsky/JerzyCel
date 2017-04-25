@@ -23,7 +23,7 @@ var names = {
 };
 
 gulp.task("html", function (cb) {
-  return pump([
+  pump([
     gulp.src(paths.html),
     nunjucksRender({path: ['src/templates/']}),
     htmlmin({collapseWhitespace: true}),
@@ -36,7 +36,7 @@ gulp.task("sass", function (cb) {
     includePaths: ['./bower_components/bulma/', './node_modules/font-awesome/scss']
   };
 
-  return pump([
+  pump([
     gulp.src(paths.sass),
     sass(config),
     concat(names.css),
@@ -46,7 +46,7 @@ gulp.task("sass", function (cb) {
 });
 
 gulp.task("js", function (cb) {
-  return pump([
+  pump([
     gulp.src(paths.js),
     uglify({compress: {unused: false}}),
     concat(names.js),
@@ -55,7 +55,7 @@ gulp.task("js", function (cb) {
 });
 
 gulp.task("img", function (cb) {
-  return pump([
+  pump([
     gulp.src(paths.img),
     imagemin(),
     gulp.dest(paths.dist + "/img")
@@ -63,7 +63,7 @@ gulp.task("img", function (cb) {
 });
 
 gulp.task("icons", function (cb) {
-  return pump([
+  pump([
     gulp.src("./node_modules/font-awesome/fonts/**.*"),
     gulp.dest(paths.dist + "/fonts")
   ], cb)
