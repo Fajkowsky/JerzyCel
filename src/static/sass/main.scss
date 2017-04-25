@@ -14,6 +14,19 @@ body {
   font-size: 28px;
 }
 
+.nav-toggle span {
+  height: 2px;
+  width: 21px;
+
+  &:nth-child(1) {
+    margin-top: -8px;
+  }
+
+  &:nth-child(3) {
+    margin-top: 6px;
+  }
+}
+
 .section {
   .container {
     @include narrow-container;

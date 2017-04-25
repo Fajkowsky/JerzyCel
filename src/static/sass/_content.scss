@@ -16,6 +16,7 @@ a[name]:not([href]) {
 
   .form {
     font-family: $font-secondary;
+    margin-top: 2rem;
 
     .field-body {
       @include tablet {
@@ -26,11 +27,11 @@ a[name]:not([href]) {
 
   .map {
     background: $warning;
-    height: 300px;
-    margin-top: 2rem;
+    height: 100%;
     width: 100%;
 
     @include mobile {
+      height: 100vw;
       margin-left: -1.5rem;
       margin-right: -1.5rem;
       width: calc(100% + 3rem);
