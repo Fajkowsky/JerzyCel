@@ -1,6 +1,6 @@
 @import "font-awesome";
 
-@import "./variables";
+@import "variables";
 @import "bulma";
 
 body {
@@ -38,9 +38,10 @@ hr.separator {
   height: 5px;
 }
 
-@import "./nav";
-@import "./content";
-@import "./examples";
-@import "./showcase";
-@import "./swiper";
-@import "./footer";
+@import "nav";
+@import "content";
+@import "examples";
+@import "showcase";
+@import "steps";
+@import "swiper";
+@import "footer";

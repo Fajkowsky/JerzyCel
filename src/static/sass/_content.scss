@@ -1,4 +1,4 @@
-@import "./variables";
+@import "variables";
 
 a[name]:not([href]) {
   color: $text;
@@ -26,7 +26,6 @@ a[name]:not([href]) {
   }
 
   .map {
-    background: $warning;
     height: 100%;
     width: 100%;
 
@@ -137,7 +136,7 @@ a[name]:not([href]) {
   margin-right: -1.5rem;
   padding: 1.5rem 0;
   text-align: center;
-  
+
   .title {
     color: $primary;
     font-size: 32px;
@@ -146,13 +145,5 @@ a[name]:not([href]) {
 
   & + .container {
     margin-top: 2rem;
-  }
-}
-
-.steps {
-  .container {
-    @include widescreen {
-      padding: 0 10rem;
-    }
   }
 }

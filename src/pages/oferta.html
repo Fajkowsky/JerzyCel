@@ -85,11 +85,13 @@
       <div class="columns links">
       {% for example in examples %}
         <div class="column">
-          <a href="{{ example.url }}">
-            <span class="icon is-large">
-              <i class="fa fa-file-pdf-o"></i>
-            </span>
-          </a>
+          <div>
+            <a href="{{ example.url }}">
+              <span class="icon is-large">
+                <i class="fa fa-file-pdf-o"></i>
+              </span>
+            </a>
+          </div>
           <span class="name">{{ example.name }}</span>
         </div>
       {% endfor %}
