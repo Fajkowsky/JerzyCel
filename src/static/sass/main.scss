@@ -4,8 +4,11 @@
 @import "bulma";
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: 'Raleway';
   font-size: 20px;
+  min-height: 100vh;
 }
 
 .hero {
@@ -36,6 +39,10 @@ body {
 hr.separator {
   background-color: $yellow;
   height: 5px;
+}
+
+.spacer {
+  margin-top: 1rem;
 }
 
 @import "nav";
