@@ -14,6 +14,7 @@ var paths = {
   sass: "src/static/sass/*.scss",
   js: "src/static/js/*.js",
   img: "src/static/img/*",
+  pdf: "src/static/pdf/*",
   dist: "build/"
 };
 
@@ -69,6 +70,13 @@ gulp.task("icons", function (cb) {
   ], cb)
 });
 
+gulp.task("pdf", function (cb) {
+  pump([
+    gulp.src(paths.pdf),
+    gulp.dest(paths.dist + "/pdf")
+  ], cb)
+});
+
 gulp.task("clean", function () {
   return del([paths.dist]);
 });
@@ -80,5 +88,5 @@ gulp.task("watch", function () {
   gulp.watch(paths.img, ["img"]);
 });
 
-gulp.task("build", ["html", "sass", "js", "img", "icons"]);
+gulp.task("build", ["html", "sass", "js", "img", "icons", "pdf"]);
 gulp.task("default", ["clean", "build", "watch"]);

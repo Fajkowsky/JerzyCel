@@ -26,7 +26,7 @@ a[name]:not([href]) {
   }
 
   .map {
-    height: 100%;
+    height: 400px;
     width: 100%;
 
     @include mobile {

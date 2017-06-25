@@ -62,44 +62,4 @@
 
 {% include "partials/steps.html" %}
 
-<section class="section">
-  <div class="container has-text-centered">
-    <div class="content examples">
-      <p>Pooglądaj przykłady protokołów:</p>
-
-      {% set examples = [
-        {
-          url: '',
-          name: 'dom jednorodzinny'
-        },
-        {
-          url: '',
-          name: 'linia produkcyjna'
-        },
-        {
-          url: '',
-          name: 'elektronarzędzie'
-        }
-      ] %}
-
-      <div class="columns links">
-      {% for example in examples %}
-        <div class="column">
-          <div>
-            <a href="{{ example.url }}">
-              <span class="icon is-large">
-                <i class="fa fa-file-pdf-o"></i>
-              </span>
-            </a>
-          </div>
-          <span class="name">{{ example.name }}</span>
-        </div>
-      {% endfor %}
-      </div>
-
-      <p>W przypadku wykrycia <b>usterek</b> w instalacji, pomiary wykonywane są ponownie po usunięciu usterek <b>w ramach ceny usługi!</b></p>
-    </div>
-  </div>
-</section>
-
 {% endblock %}
