@@ -11,6 +11,10 @@ body {
   min-height: 100vh;
 }
 
+.nav {
+  min-height: 6.25rem;
+}
+
 .hero {
   background-color: $lighter;
   color: $primary;
