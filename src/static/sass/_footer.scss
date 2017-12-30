@@ -20,6 +20,13 @@
 .is-contact {
   font-size: 23px;
   margin-top: 1rem;
+  & > a {
+    color: $white;
+
+    &:hover {
+      color: $primary-light;
+    }
+  }
 }
 
 .footer-menu {
