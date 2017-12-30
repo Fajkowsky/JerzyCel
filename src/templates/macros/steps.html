@@ -1,0 +1,6 @@
+{% macro step(name, description) %}
+<div class="column step">
+  <div class="name">{{ name }}</div>
+  <small class="description">{{ description | safe }}</small>
+</div>
+{% endmacro %}

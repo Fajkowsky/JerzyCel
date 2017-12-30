@@ -1,34 +1,57 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="hero is-fullheight">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title">
-                Pomiary elektryczne. Jerzy Cel
-            </h1>
-            <p class="subtitle">
-                Oferujemy Państwu pomiary elektryczne w domach jednorodzinnych, zakładach produkcyjnych oraz pomiary
-                elektronarzędzi.
-                Mamy 30-letnie doświadczenie z instalacjami eletrycznymi i wierzymy, że solidne i regularne pomiary
-                zapewnią Państwu bezpieczeństwo.
-            </p>
-
-            <p>Wykonujemy:</p>
-            <dl>
-                <li>pomiary elektryczne</li>
-                <li>przeglądy i prace kontrolno pomiarowe</li>
-                <li>pomiary skuteczności ochrony przeciwporażeniowej</li>
-                <li>pomiary rezystancji izolacji obwodów</li>
-                <li>pomiary elektronarzędzi</li>
-                <li>pomiary instalacji odgromowych</li>
-                <li>pomiary uziemień rusztowań</li>
-                <li>podłączania sprzętów domowych</li>
-            </dl>
-
-            <p>Pomiary wykonujemy na terenie całego <strong>Śląska</strong> i nie tylko, dojeżdzamy do <b>Skoczowa, Wisły, Cieszyna, Bielska, Żywca i Ustronia.</b></p>
-            <h4 class="title is-4">Zapraszamy do kontaktu. Telefon kontaktowy: <a href="tel:602217539">602 217 539</a></h4>
-        </div>
+<section class="hero is-medium">
+  <div class="hero-body has-text-centered">
+    <div class="container">
+      Specjalizujemy się w wykonywaniu profesjonalnych pomiarów elektrycznych wraz z wymaganymi protokołami na terenie południowej Polski.
     </div>
+  </div>
 </section>
+
+<section class="section">
+  <div class="container">
+    <div class="content">
+      <ul class="offers"><b>Oferujemy następujące usługi:</b>
+
+        {% set offers = [
+          {
+            name: 'pomiary elektryczne',
+            slug: 'pomiary-elektryczne'
+          },
+          {
+            name: 'przeglądy i prace kontrolno pomiarowe',
+            slug: 'przeglady-i-prace-kontrolno-pomiarowe'
+          },
+          {
+            name: 'pomiary skuteczności ochrony przeciwporażeniowej',
+            slug: 'pomiary-skutecznosci-ochrony-przeciwporazeniowej'
+          },
+          {
+            name: 'pomiary rezystancji izolacji obwodów',
+            slug: 'pomiary-rezystancji-izolacji-obwodow'
+          },
+          {
+            name: 'pomiary elektronarzędzi',
+            slug: 'pomiary-elektronarzedzi'
+          },
+          {
+            name: 'pomiary instalacji odgromowych',
+            slug: 'pomiary-instalacji-odgromowych'
+          }
+        ] %}
+
+        {% for offer in offers %}
+          <li><a href="/oferta#{{ offer.slug }}">{{ offer.name }}</li>
+        {% endfor %}
+
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% include "partials/steps.html" %}
+{% include "partials/showcase.html" %}
+{% include "partials/slides.html" %}
+
 {% endblock %}

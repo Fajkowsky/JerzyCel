@@ -1,0 +1,39 @@
+<footer class="footer">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-6">
+        <div class="is-brand">
+          <p>Solidne Pomiary</p>
+        </div>
+        <div class="is-contact">
+          <p>tel. 602 217 539</p>
+        </div>
+        <div class="is-contact">
+          <p>Targowa 15</p>
+          <p>43-430 Skoczów</p>
+        </div>
+      </div>
+      <div class="column is-5 is-offset-1">
+        <div class="footer-menu">
+          <ul>
+
+            {% import "macros/menu.html" as menu %}
+
+            {% set nav_items = [
+              { name: 'Strona główna', slug: '/' },
+              { name: 'Oferta', slug: 'oferta' },
+              { name: 'O firmie', slug: 'o-firmie' },
+              { name: 'Poradnik pomiarów', slug: 'poradnik-pomiarow' },
+              { name: 'Kontakt', slug: 'kontakt' }
+            ] %}
+
+            {% for item in nav_items %}
+              {{ menu.footer(item.name, item.slug, pageActive == item.slug) }}
+            {% endfor %}
+      
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

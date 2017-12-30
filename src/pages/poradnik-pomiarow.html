@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% set pageActive='poradnik-pomiarow' %}
+
+{% block content %}
+
+  {% set sections = [
+    {
+      items: [
+        {
+          title: "Poradnik - kto, jak często i jakie pomiary musisz wykonywać?",
+          body: "Chcielibyśmy przybliżyć Państwu przepisy o pomiarach elektrycznych oraz napisać dlaczego warto je wykonywać dla dobra siebie, pracowników oraz rodziny!"
+        }
+      ]
+    },
+    {
+      header: "Domy jednorodzinne",
+      items: [
+        {
+          title: "Jakie pomiary?",
+          body: "W domach jednorodzinych podstawą są pomiary instalacji odgromowe, która chroni nas przes wyładowaniami atmosferycznymim. Ważne jest aby sprawdzić stan tej instalacji zwłaszcza przed okresem burzowym - wiosną. W domach jednorodzinnych wykonujemy również pomiary instalacji oraz urządzeń elektrycznych codziennego użytku."
+        },
+        {
+          title: "Po co?",
+          body: "Najważniejszym powodem dla wykonania takich pomiarów powinno Państwa poczucie bezpieczeństwa. Drugim bardzo ważnych powodem jest wymóg aktualnych pomiarów przez zakłady ubezpieczeń oraz banki, w przypadku domu i mieszkania na kredyt. Również coraz częściej zdarza się że spółdzielnie mieszkaniowe dbają o to aby mieszkania miały aktualne pomiary elektryczne."
+        }
+      ]
+    },
+    {
+      header: "Elektro narzędzia",
+      items: [
+        {
+          title: "Jakie pomiary?",
+          body: "Pomiary elektronarządzi rozpoczynamy od oględzin zewnętrznych oraz wewnętrznych. Następnie sprawdzamy stan obwodu ochronnego oraz jak narzędzie funkcjonuje na biegu jałowym. Wykonujemy pomiar rezystancji izolacji oraz pomiar obwódu ochronnego."
+        },
+        {
+          title: "Po co?",
+          body: "Sprawdzenie stanu technicznego narzędzi jest ważne dla bezpieczeństawa osób korzystających z nich. Szybsze wykrycie usterki może również wydłużyć żywot elektronarzędzia, chroniąc go przed większych uszkodzeniem."
+        }
+      ]
+    },
+    {
+      header: "Zakłady pracy",
+      items: [
+        {
+          title: "Jakie pomiary?",
+          body: "Pomiary są wykonywane dla instalacji oraz urządzeń elektrycznych nowych, modernizowanych oraz aktualnie w użyciu. Sprawdzana jest dokumentacja, wykonywane są oględziny zewnętrzne i wewnętrzne, pomiary parametrów oraz test sprawności urządzenia."
+        },
+        {
+          title: "Po co?",
+          body: "Pomiary mają stwierdzić przydatność danego urządzenia do działania ale przede wszystkim dla bezpieczeństwa osób pracujących na zakładzie. Również takie pomiary są wymagane przez Państwowy Inspektorat Pracy. Pomiary mają na celu sprawdzić czy stan techniczny instalacji lub urządzeń elektrycznych w trakcie eksploatacji nie uległ pogorszeniu w stopniu zagrażającym bezpieczeństwu bądź uniemożliwieniu dalszego działania maszyny."
+        }
+      ]
+    }
+  ] %}
+
+  {% for section in sections %}
+  <section class="section questions">
+    {% if section.header %}
+    <header class="section-header">
+      <h1 class="title">{{ section.header }}</h1>
+    </header>
+    {% endif %}
+    <div class="container">
+      <div class="content">
+      {% for item in section.items %}
+      <h2 class="title is-5"><b>{{ item.title }}</b></h2>
+      <p>{{ item.body }}</p>
+      {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+
+{% endblock %}

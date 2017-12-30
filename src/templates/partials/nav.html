@@ -1,0 +1,31 @@
+<header class="nav">
+  <div class="container">
+    <div class="nav-left">
+      <a href="/" class="nav-item is-brand">Solidne Pomiary</a>
+    </div>
+
+    <span class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+
+    <div class="nav-right nav-menu">
+
+      {% import "macros/menu.html" as menu %}
+
+      {% set nav_items = [
+        { name: 'Strona główna', slug: none },
+        { name: 'Oferta', slug: 'oferta' },
+        { name: 'O firmie', slug: 'o-firmie' },
+        { name: 'Poradnik pomiarów', slug: 'poradnik-pomiarow' },
+        { name: 'Kontakt', slug: 'kontakt' }
+      ] %}
+
+      {% for item in nav_items %}
+        {{ menu.nav_item(item.name, item.slug, pageActive == item.slug) }}
+      {% endfor %}
+
+    </div>
+  </div>
+</header>

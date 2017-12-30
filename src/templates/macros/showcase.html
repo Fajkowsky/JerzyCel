@@ -1,0 +1,12 @@
+{% macro item(img_url, description) %}
+<div class="columns">
+  <div class="column">
+    <figure class="image">
+      <img src="{{ img_url }}">
+    </figure>
+  </div>
+  <div class="column">
+    <p>{{ description | safe }}</p>
+  </div>
+</div>
+{% endmacro %}

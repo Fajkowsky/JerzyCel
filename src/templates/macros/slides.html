@@ -1,0 +1,10 @@
+{% macro slide(quote, author) %}
+<div class="swiper-slide">
+  <blockquote>
+    <q>{{ quote }}</q>
+    <footer>
+      <span>{{ author }}</span>
+    </footer>
+  </blockquote>
+</div>
+{% endmacro %}

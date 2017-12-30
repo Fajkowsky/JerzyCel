@@ -1,2 +1,54 @@
 @import "font-awesome";
+
+@import "variables";
 @import "bulma";
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Raleway';
+  font-size: 20px;
+  min-height: 100vh;
+}
+
+.hero {
+  background-color: $lighter;
+  color: $primary;
+  font-size: 28px;
+}
+
+.nav-toggle span {
+  height: 2px;
+  width: 21px;
+
+  &:nth-child(1) {
+    margin-top: -8px;
+  }
+
+  &:nth-child(3) {
+    margin-top: 6px;
+  }
+}
+
+.section {
+  .container {
+    @include narrow-container;
+  }
+}
+
+hr.separator {
+  background-color: $yellow;
+  height: 5px;
+}
+
+.spacer {
+  margin-top: 1rem;
+}
+
+@import "nav";
+@import "content";
+@import "examples";
+@import "showcase";
+@import "steps";
+@import "swiper";
+@import "footer";

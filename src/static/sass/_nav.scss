@@ -1,0 +1,80 @@
+@import "variables";
+
+header.nav {
+  .nav-left {
+    .is-brand {
+      color: $yellow;
+      font-size: 36px;
+      font-weight: 900;
+    }
+  }
+
+  .nav-toggle {
+    padding: 35px;
+
+    @include touch {
+      display: block;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .nav-menu {
+    @include touch {
+      background-color: #fff;
+      box-shadow: 0 4px 7px hsla(0,0%,4%,.1);
+      left: 0;
+      display: none;
+      padding-bottom: 0.75rem;
+      position: absolute;
+      right: 0;
+      top: 100%;
+
+      &.is-active {
+        display: block;
+      }
+    }
+
+    @include desktop {
+      display: flex;
+    }
+
+    .nav-item {
+      color: $primary;
+      font-size: 18px;
+
+      @include touch {
+        border: 0;
+        justify-content: center;
+        padding: 0.25rem;
+
+        &.is-active {
+          span {
+            color: $yellow;
+          }
+        }
+      }
+
+      @include desktop {
+        span {
+          border-bottom: 2px solid transparent;
+          transition: border $speed $easing;
+        }
+
+        &.is-active {
+          span {
+            border-color: $primary;
+          }
+        }
+
+        &:hover {
+          span {
+            border-color: $yellow;
+          }
+        }
+      }
+    }
+  }
+}

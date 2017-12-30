@@ -1,0 +1,27 @@
+@import "variables";
+
+.showcase {
+  .columns {
+    align-items: center;
+    font-family: $font-secondary;
+    font-size: 20px;
+
+    @include tablet {
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+
+        .column {
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+  .image {
+    @include desktop {
+      padding: 2rem;
+    }
+  }
+}
