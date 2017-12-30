@@ -15,6 +15,13 @@ body {
   background-color: $lighter;
   color: $primary;
   font-size: 28px;
+
+  &.is-medium .hero-body {
+    @include desktop {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
 }
 
 .nav-toggle span {

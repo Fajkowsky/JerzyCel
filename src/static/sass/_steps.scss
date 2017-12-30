@@ -29,11 +29,11 @@
     transition: all $speed $easing;
     width: 180px;
 
-    &:hover {
-      background-color: $white;
-      color: $primary;
-      cursor: pointer;
-    }
+    //&:hover {
+    //  background-color: $white;
+    //  color: $primary;
+    //  cursor: pointer;
+    //}
   }
 
   .description {
